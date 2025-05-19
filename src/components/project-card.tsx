@@ -2,15 +2,10 @@
 
 import { motion } from "framer-motion";
 import { Github, ExternalLink } from "lucide-react";
+import { Project } from "@/interfaces";
+import { fadeInUp } from "@/utils/motion";
 
-interface ProjectCardProps {
-  title: string;
-  description: string;
-  technologies: string[];
-  githubUrl?: string;
-  liveUrl?: string;
-  imageUrl?: string;
-}
+interface ProjectCardProps extends Project {}
 
 export function ProjectCard({
   title,
@@ -24,10 +19,10 @@ export function ProjectCard({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      variants={fadeInUp}
+      initial="initial"
+      whileInView="animate"
       viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
       className="group bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
     >
       {imageUrl && (

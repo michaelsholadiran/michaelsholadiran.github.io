@@ -1,52 +1,17 @@
 "use client";
 
 import { Navbar } from "@/components/navbar";
-import {
-  Github,
-  Linkedin,
-  Mail,
-  Code2,
-  Database,
-  Server,
-  MapPin,
-  Phone,
-  Calendar,
-  ArrowDown,
-} from "lucide-react";
+import { MapPin, Phone, Mail, ArrowDown } from "lucide-react";
 import { motion } from "framer-motion";
 import { ProjectCard } from "@/components/project-card";
-
-const skills = [
-  { name: "React.js", icon: Code2 },
-  { name: "Next.js", icon: Code2 },
-  { name: "Laravel", icon: Server },
-  { name: "Redux.js", icon: Code2 },
-  { name: "PHP", icon: Server },
-  { name: "MySQL", icon: Database },
-];
-
-const projects = [
-  {
-    title: "Motobills Platform",
-    description:
-      "Nigeria's number one bill payment platform for hassle-free payment of utility bills, cheap airtime/data purchase, and the best deals on flights and hotels. Built with Next.js and Laravel, featuring real-time transactions and secure payment processing.",
-    technologies: ["Next.js", "Laravel", "MySQL", "Tailwind CSS"],
-    githubUrl: "https://github.com/yourusername/motobills",
-    liveUrl: "https://www.motobills.com",
-    imageUrl: `${
-      process.env.NEXT_PUBLIC_BASE_PATH || ""
-    }/images/motobills.webp`,
-  },
-  {
-    title: "Sujimoto Real Estate",
-    description:
-      "Africa's most sophisticated real estate brand and the Rolls Royce of luxury real estate. Specializing in high-end residential, commercial, and hospitality developments with exquisite finishing and innovative designs.",
-    technologies: ["React.js", "Next.js", "Tailwind CSS", "REST APIs"],
-    githubUrl: "https://github.com/yourusername/sujimoto",
-    liveUrl: "https://sujimotonig.com",
-    imageUrl: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/sujimoto.png`,
-  },
-];
+import {
+  SKILLS,
+  PROJECTS,
+  EXPERIENCES,
+  EDUCATION,
+  CONTACT_INFO,
+} from "@/constants/data";
+import { fadeInUp, scaleIn, staggerContainer } from "@/utils/motion";
 
 export default function Home() {
   return (
@@ -60,17 +25,12 @@ export default function Home() {
       >
         <div className="container mx-auto px-4 py-20">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            variants={staggerContainer}
+            initial="initial"
+            animate="animate"
             className="text-center"
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="mb-8"
-            >
+            <motion.div variants={scaleIn} className="mb-8">
               <img
                 src={`${
                   process.env.NEXT_PUBLIC_BASE_PATH || ""
@@ -80,45 +40,37 @@ export default function Home() {
               />
             </motion.div>
             <motion.h1
+              variants={fadeInUp}
               className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
             >
               Michael Sholadiran
             </motion.h1>
             <motion.p
+              variants={fadeInUp}
               className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
             >
               Full Stack Developer | Laravel • React.js • Next.js
             </motion.p>
             <motion.div
+              variants={fadeInUp}
               className="flex flex-col items-center gap-4 mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
             >
               <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                 <MapPin className="h-5 w-5" />
-                <span>Lagos State, Nigeria</span>
+                <span>{CONTACT_INFO.location}</span>
               </div>
               <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                 <Phone className="h-5 w-5" />
-                <span>08071810339</span>
+                <span>{CONTACT_INFO.phone}</span>
               </div>
               <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                 <Mail className="h-5 w-5" />
-                <span>sholadiranmichael@gmail.com</span>
+                <span>{CONTACT_INFO.email}</span>
               </div>
             </motion.div>
             <motion.div
+              variants={fadeInUp}
               className="flex justify-center gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
             >
               <a
                 href="#projects"
@@ -148,8 +100,9 @@ export default function Home() {
       <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={fadeInUp}
+            initial="initial"
+            whileInView="animate"
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center"
           >
@@ -171,21 +124,23 @@ export default function Home() {
       <section id="skills" className="py-20">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-3xl font-bold text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={fadeInUp}
+            initial="initial"
+            whileInView="animate"
             viewport={{ once: true }}
+            className="text-3xl font-bold text-center mb-12"
           >
             Technical Skills
           </motion.h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {skills.map((skill, index) => (
+            {SKILLS.map((skill, index) => (
               <motion.div
                 key={skill.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                variants={fadeInUp}
+                initial="initial"
+                whileInView="animate"
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ delay: index * 0.1 }}
                 className="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-lg shadow-md hover:shadow-lg transition-shadow"
               >
                 <skill.icon className="h-8 w-8 mb-2 text-blue-600" />
@@ -200,76 +155,39 @@ export default function Home() {
       <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-3xl font-bold text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={fadeInUp}
+            initial="initial"
+            whileInView="animate"
             viewport={{ once: true }}
+            className="text-3xl font-bold text-center mb-12"
           >
             Work Experience
           </motion.h2>
           <div className="max-w-3xl mx-auto space-y-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-md"
-            >
-              <h3 className="text-xl font-bold mb-2">Full Stack Developer</h3>
-              <p className="text-blue-600 dark:text-blue-400 mb-2">Motobills</p>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
-                September 2024 - Present
-              </p>
-              <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
-                <li>
-                  Designed and developed performant, responsive user interfaces
-                  using Next.js, React, and Tailwind CSS
-                </li>
-                <li>
-                  Built and maintained secure, RESTful APIs and backend services
-                  using Laravel (PHP) and MySQL
-                </li>
-                <li>
-                  Improved application performance by over 40% through front-end
-                  optimization and API restructuring
-                </li>
-                <li>
-                  Spearheaded the development of a real-time dashboard that
-                  improved operational efficiency
-                </li>
-              </ul>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-md"
-            >
-              <h3 className="text-xl font-bold mb-2">Frontend Web Developer</h3>
-              <p className="text-blue-600 dark:text-blue-400 mb-2">
-                SUJIMOTO GROUP
-              </p>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
-                September 2024 - Present
-              </p>
-              <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
-                <li>
-                  Developed responsive and high-performance user interfaces for
-                  various web platforms
-                </li>
-                <li>
-                  Built reusable and modular components to maintain consistency
-                  and improve development efficiency
-                </li>
-                <li>
-                  Optimized frontend performance for speed, responsiveness, and
-                  SEO friendliness
-                </li>
-                <li>
-                  Contributed to improving and maintaining the design system to
-                  support brand consistency
-                </li>
-              </ul>
-            </motion.div>
+            {EXPERIENCES.map((experience, index) => (
+              <motion.div
+                key={experience.title}
+                variants={fadeInUp}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-md"
+              >
+                <h3 className="text-xl font-bold mb-2">{experience.title}</h3>
+                <p className="text-blue-600 dark:text-blue-400 mb-2">
+                  {experience.company}
+                </p>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  {experience.period}
+                </p>
+                <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
+                  {experience.responsibilities.map((responsibility, i) => (
+                    <li key={i}>{responsibility}</li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -278,40 +196,39 @@ export default function Home() {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-3xl font-bold text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={fadeInUp}
+            initial="initial"
+            whileInView="animate"
             viewport={{ once: true }}
+            className="text-3xl font-bold text-center mb-12"
           >
             Education
           </motion.h2>
           <div className="max-w-3xl mx-auto space-y-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-md"
-            >
-              <h3 className="text-xl font-bold mb-2">
-                BSc in Computer Science
-              </h3>
-              <p className="text-blue-600 dark:text-blue-400 mb-2">
-                University of Lagos
-              </p>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
-                2018 - 2022
-              </p>
-              <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
-                <li>Graduated with First Class Honours</li>
-                <li>Specialized in Software Engineering and Web Development</li>
-                <li>
-                  Active member of the Computer Science Students Association
-                </li>
-                <li>
-                  Participated in various hackathons and coding competitions
-                </li>
-              </ul>
-            </motion.div>
+            {EDUCATION.map((education, index) => (
+              <motion.div
+                key={education.degree}
+                variants={fadeInUp}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-md"
+              >
+                <h3 className="text-xl font-bold mb-2">{education.degree}</h3>
+                <p className="text-blue-600 dark:text-blue-400 mb-2">
+                  {education.institution}
+                </p>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  {education.period}
+                </p>
+                <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
+                  {education.achievements.map((achievement, i) => (
+                    <li key={i}>{achievement}</li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -320,15 +237,16 @@ export default function Home() {
       <section id="projects" className="py-20">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-3xl font-bold text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={fadeInUp}
+            initial="initial"
+            whileInView="animate"
             viewport={{ once: true }}
+            className="text-3xl font-bold text-center mb-12"
           >
             Featured Projects
           </motion.h2>
           <div className="grid md:grid-cols-2 gap-8">
-            {projects.map((project) => (
+            {PROJECTS.map((project) => (
               <ProjectCard key={project.title} {...project} />
             ))}
           </div>
@@ -339,18 +257,20 @@ export default function Home() {
       <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-3xl font-bold text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={fadeInUp}
+            initial="initial"
+            whileInView="animate"
             viewport={{ once: true }}
+            className="text-3xl font-bold text-center mb-12"
           >
             Get in Touch
           </motion.h2>
           <motion.div
-            className="max-w-2xl mx-auto text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={fadeInUp}
+            initial="initial"
+            whileInView="animate"
             viewport={{ once: true }}
+            className="max-w-2xl mx-auto text-center"
           >
             <p className="text-lg mb-8">
               I'm always open to discussing new projects, creative ideas, or
@@ -358,16 +278,14 @@ export default function Home() {
             </p>
             <div className="flex flex-col items-center gap-4">
               <a
-                href="mailto:sholadiranmichael@gmail.com"
+                href={`mailto:${CONTACT_INFO.email}`}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
               >
                 <Mail className="h-5 w-5" />
                 Contact Me
               </a>
               <p className="text-gray-600 dark:text-gray-300">
-                16, Bornu Crescent Agbara Estate
-                <br />
-                Agbara Ogun State, Nigeria
+                {CONTACT_INFO.address}
               </p>
             </div>
           </motion.div>

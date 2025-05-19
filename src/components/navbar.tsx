@@ -2,16 +2,8 @@
 
 import { motion } from "framer-motion";
 import { ThemeToggle } from "./theme-toggle";
-import { Github, Linkedin, Mail } from "lucide-react";
-
-const navItems = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
-  { name: "Experience", href: "#experience" },
-  { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" },
-];
+import { NAV_ITEMS, SOCIAL_LINKS } from "@/constants/data";
+import { fadeInUp } from "@/utils/motion";
 
 export function Navbar() {
   return (
@@ -32,7 +24,7 @@ export function Navbar() {
           </motion.a>
 
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
+            {NAV_ITEMS.map((item) => (
               <motion.a
                 key={item.name}
                 href={item.href}
@@ -47,37 +39,20 @@ export function Navbar() {
 
           <div className="flex items-center space-x-4">
             <div className="hidden md:flex space-x-2">
-              <motion.a
-                href="https://github.com/michaelsholadiran"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                aria-label="GitHub Profile"
-              >
-                <Github className="h-5 w-5" />
-              </motion.a>
-              <motion.a
-                href="https://linkedin.com/in/michaelsholadiran"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                aria-label="LinkedIn Profile"
-              >
-                <Linkedin className="h-5 w-5" />
-              </motion.a>
-              <motion.a
-                href="mailto:sholadiranmichael@gmail.com"
-                className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                aria-label="Email Contact"
-              >
-                <Mail className="h-5 w-5" />
-              </motion.a>
+              {SOCIAL_LINKS.map((link) => (
+                <motion.a
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  aria-label={`${link.name} Profile`}
+                >
+                  <link.icon className="h-5 w-5" />
+                </motion.a>
+              ))}
             </div>
             <ThemeToggle />
           </div>
