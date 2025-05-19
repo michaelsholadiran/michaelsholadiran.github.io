@@ -1,20 +1,21 @@
 3:"$Sreact.fragment"
-4:I[4858,["185","static/chunks/app/layout-e9f35c2b3eeee066.js"],"ThemeProvider",1]
-5:I[9275,[],""]
-6:I[4845,["601","static/chunks/app/error-60c30105b0ce4f0c.js"],"default",1]
-7:I[1343,[],""]
-8:I[231,["231","static/chunks/231-b958b8c952950b1e.js","160","static/chunks/app/not-found-d7ee3fe93d376894.js"],""]
-9:I[6513,[],"ClientPageRoot"]
-a:I[2270,["28","static/chunks/28-f4843d733e75c30c.js","931","static/chunks/app/page-c13947e303138193.js"],"default",1]
-d:I[3120,[],"OutletBoundary"]
-f:I[3120,[],"MetadataBoundary"]
-11:I[3120,[],"ViewportBoundary"]
-13:I[6130,[],""]
+4:I[4858,["838","static/chunks/838-f5d2f28ae6a173da.js","185","static/chunks/app/layout-3d66d263dbdd56c0.js"],"ThemeProvider",1]
+5:I[2686,["838","static/chunks/838-f5d2f28ae6a173da.js","185","static/chunks/app/layout-3d66d263dbdd56c0.js"],"Navbar",1]
+6:I[9275,[],""]
+7:I[4845,["601","static/chunks/app/error-d74df25f6ff7c675.js"],"default",1]
+8:I[1343,[],""]
+9:I[231,["231","static/chunks/231-b958b8c952950b1e.js","160","static/chunks/app/not-found-d7ee3fe93d376894.js"],""]
+a:I[6513,[],"ClientPageRoot"]
+b:I[1920,["838","static/chunks/838-f5d2f28ae6a173da.js","931","static/chunks/app/page-5a21c2d45fa9b5f7.js"],"default",1]
+e:I[3120,[],"OutletBoundary"]
+10:I[3120,[],"MetadataBoundary"]
+12:I[3120,[],"ViewportBoundary"]
+14:I[6130,[],""]
 1:HL["/my-portfolio/_next/static/media/a34f9d1faa5f3315-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-2:HL["/my-portfolio/_next/static/css/0c3f174ebb697697.css","style"]
-0:{"P":null,"b":"AhN3naPiLVKLNBSZLGK11","p":"/my-portfolio","c":["",""],"i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],["",["$","$3","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/my-portfolio/_next/static/css/0c3f174ebb697697.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":["$","body",null,{"className":"__className_ee5f9b","children":["$","$L4",null,{"attribute":"class","defaultTheme":"system","enableSystem":true,"disableTransitionOnChange":true,"children":["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$6","errorStyles":[],"errorScripts":[],"template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"className":"min-h-screen flex items-center justify-center bg-white dark:bg-gray-900","children":["$","div",null,{"className":"text-center","children":[["$","h2",null,{"className":"text-2xl font-bold text-gray-900 dark:text-white mb-4","children":"Page Not Found"}],["$","p",null,{"className":"text-gray-600 dark:text-gray-300 mb-4","children":"The page you're looking for doesn't exist or has been moved."}],["$","$L8",null,{"href":"/","className":"px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors","children":"Return Home"}]]}]}],"notFoundStyles":[]}]}]}]}]]}],{"children":["__PAGE__",["$","$3","c",{"children":[["$","$L9",null,{"Component":"$a","searchParams":{},"params":{},"promises":["$@b","$@c"]}],null,["$","$Ld",null,{"children":"$Le"}]]}],{},null]},[["$","div","l",{"className":"min-h-screen flex items-center justify-center bg-white dark:bg-gray-900","children":["$","div",null,{"className":"animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-600"}]}],[],[]]],["$","$3","h",{"children":[null,["$","$3","klWo_qIuJy_5j7arIX82J",{"children":[["$","$Lf",null,{"children":"$L10"}],["$","$L11",null,{"children":"$L12"}],["$","meta",null,{"name":"next-size-adjust"}]]}]]}]]],"m":"$undefined","G":"$13","s":false,"S":true}
+2:HL["/my-portfolio/_next/static/css/a7eb0b01a994cd65.css","style"]
+0:{"P":null,"b":"Ivuw1etwySAMGER5QO6kk","p":"/my-portfolio","c":["",""],"i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],["",["$","$3","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/my-portfolio/_next/static/css/a7eb0b01a994cd65.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":["$","body",null,{"className":"__className_ee5f9b","children":["$","$L4",null,{"attribute":"class","defaultTheme":"system","enableSystem":true,"disableTransitionOnChange":true,"children":["$","div",null,{"className":"min-h-screen bg-background","children":[["$","$L5",null,{}],["$","main",null,{"className":"container mx-auto px-4 py-8","children":["$","$L6",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$7","errorStyles":[],"errorScripts":[],"template":["$","$L8",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"className":"min-h-screen flex items-center justify-center bg-background","children":["$","div",null,{"className":"text-center p-8","children":[["$","h2",null,{"className":"text-2xl font-bold mb-4","children":"Page Not Found"}],["$","p",null,{"className":"mb-4","children":"The page you're looking for doesn't exist."}],["$","$L9",null,{"href":"/","className":"px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors","children":"Return Home"}]]}]}],"notFoundStyles":[]}]}]]}]}]}]}]]}],{"children":["__PAGE__",["$","$3","c",{"children":[["$","$La",null,{"Component":"$b","searchParams":{},"params":{},"promises":["$@c","$@d"]}],null,["$","$Le",null,{"children":"$Lf"}]]}],{},null]},[["$","div","l",{"className":"min-h-screen flex items-center justify-center bg-background","children":["$","div",null,{"className":"animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"}]}],[],[]]],["$","$3","h",{"children":[null,["$","$3","j-LyfTflrAz7uTZSs9wUQ",{"children":[["$","$L10",null,{"children":"$L11"}],["$","$L12",null,{"children":"$L13"}],["$","meta",null,{"name":"next-size-adjust"}]]}]]}]]],"m":"$undefined","G":"$14","s":false,"S":true}
+d:{}
 c:{}
-b:{}
-12:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
-10:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"Michael Sholadiran | Full Stack Developer"}],["$","meta","2",{"name":"description","content":"Full Stack Developer specializing in Laravel, React.js, and Next.js. Building scalable web applications with a focus on clean architecture and performance."}],["$","meta","3",{"name":"keywords","content":"Full Stack Developer, Laravel, React.js, Next.js, PHP, JavaScript, Web Development"}],["$","meta","4",{"property":"og:title","content":"Michael Sholadiran | Full Stack Developer"}],["$","meta","5",{"property":"og:description","content":"Full Stack Developer specializing in Laravel, React.js, and Next.js. Building scalable web applications with a focus on clean architecture and performance."}],["$","meta","6",{"property":"og:type","content":"website"}],["$","meta","7",{"name":"twitter:card","content":"summary"}],["$","meta","8",{"name":"twitter:title","content":"Michael Sholadiran | Full Stack Developer"}],["$","meta","9",{"name":"twitter:description","content":"Full Stack Developer specializing in Laravel, React.js, and Next.js. Building scalable web applications with a focus on clean architecture and performance."}]]
-e:null
+13:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+11:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"Michael Sholadiran - Portfolio"}],["$","meta","2",{"name":"description","content":"Full Stack Developer Portfolio showcasing projects and skills"}]]
+f:null
