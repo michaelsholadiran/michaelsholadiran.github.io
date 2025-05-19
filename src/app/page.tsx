@@ -33,7 +33,9 @@ const projects = [
     technologies: ["Next.js", "Laravel", "MySQL", "Tailwind CSS"],
     githubUrl: "https://github.com/yourusername/motobills",
     liveUrl: "https://www.motobills.com",
-    imageUrl: "/images/motobills.webp",
+    imageUrl: `${
+      process.env.NEXT_PUBLIC_BASE_PATH || ""
+    }/images/motobills.webp`,
   },
   {
     title: "Sujimoto Real Estate",
@@ -42,7 +44,7 @@ const projects = [
     technologies: ["React.js", "Next.js", "Tailwind CSS", "REST APIs"],
     githubUrl: "https://github.com/yourusername/sujimoto",
     liveUrl: "https://sujimotonig.com",
-    imageUrl: "/images/sujimoto.png",
+    imageUrl: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/sujimoto.png`,
   },
 ];
 
@@ -70,7 +72,9 @@ export default function Home() {
               className="mb-8"
             >
               <img
-                src="/images/profile-picture.jpeg"
+                src={`${
+                  process.env.NEXT_PUBLIC_BASE_PATH || ""
+                }/images/profile-picture.jpeg`}
                 alt="Michael Sholadiran"
                 className="w-48 h-48 rounded-full mx-auto object-cover border-4 border-blue-600 shadow-lg"
               />
