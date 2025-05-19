@@ -2,11 +2,14 @@
   "name": "my-bio",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://michaelsholadiran.github.io/my-portfolio",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "DEPLOY_TARGET=github next build",
+    "deploy": "touch out/.nojekyll && gh-pages -d out"
   },
   "dependencies": {
     "framer-motion": "^11.18.2",
