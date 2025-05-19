@@ -33,7 +33,7 @@ export function ProjectCard({
       {imageUrl && (
         <div
           className={`relative w-full overflow-hidden ${
-            isMotobills ? "h-40" : "h-24"
+            isMotobills ? "h-40" : "h-32"
           }`}
         >
           <motion.img
