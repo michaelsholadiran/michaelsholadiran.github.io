@@ -2,7 +2,6 @@
   "name": "my-bio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://michaelsholadiran.github.io/my-portfolio",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

@@ -10,11 +10,8 @@ const nextConfig = {
       },
     ],
   },
-  basePath: process.env.DEPLOY_TARGET === "github" ? "/my-portfolio" : "",
-  assetPrefix: process.env.DEPLOY_TARGET === "github" ? "/my-portfolio/" : "",
   env: {
-    NEXT_PUBLIC_BASE_PATH:
-      process.env.DEPLOY_TARGET === "github" ? "/my-portfolio" : "",
+    NEXT_PUBLIC_BASE_PATH: "",
   },
 };
 
