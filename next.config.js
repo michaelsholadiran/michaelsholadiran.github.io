@@ -3,18 +3,12 @@ const nextConfig = {
   output: process.env.DEPLOY_TARGET === "github" ? "export" : undefined,
   images: {
     unoptimized: true,
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "**",
-      },
-    ],
+    remotePatterns: [{ protocol: "https", hostname: "**" }],
   },
-  basePath: process.env.DEPLOY_TARGET === "github" ? "/my-portfolio" : "",
-  assetPrefix: process.env.DEPLOY_TARGET === "github" ? "/my-portfolio/" : "",
+  basePath: "",
+  assetPrefix: "",
   env: {
-    NEXT_PUBLIC_BASE_PATH:
-      process.env.DEPLOY_TARGET === "github" ? "/my-portfolio" : "",
+    NEXT_PUBLIC_BASE_PATH: "",
   },
 };
 
